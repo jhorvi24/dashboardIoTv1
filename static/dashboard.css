@@ -1,0 +1,21 @@
+#body{
+
+    background-color:#f8f9fc ;
+}
+
+.btn-encender{
+
+    background-color: #ffc002;
+    color: black !important;
+
+}
+
+.btn-encender:hover{
+
+    background-color: darkorange;
+    
+}
+
+#footer{
+    background-color: white;
+}
