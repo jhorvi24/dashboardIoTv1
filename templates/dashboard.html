@@ -57,37 +57,7 @@
           }
         });
 
-       /*  Highcharts.chart('containerTem', {
-          chart: {
-            type: 'spline'
-          },
-
-          title: {
-            text: 'Monitoreo de Temperatura y humedad'
-          },          
-
-          data: {
-           
-            csvURL:'http://localhost:5000/download/sensor.csv',
-            enablePolling: true,
-            dataRefreshRate: 5
-
-          },
-
-         
-
-          plotOptions: {
-        series: {
-            connectNulls: true  //No aparecian las lineas. Con esa opción se soluciona eso
-            /*marker: {
-                enabled: true
-            } *///otra opcion para mostrar lineas que unen los datos
-        //}
-    //}
-
-       // }); */
-
-
+     
 
       }
       setInterval(update, 3000);
@@ -102,37 +72,7 @@
             text: 'Monitoreo de Temperatura y humedad'
           },
 
-          /*xAxis: {
-            //categories:['lunes','martes','miercoes','jueves','viernes','sabado','domingo']
-            //type:'datetime',
-            /*labels:{
-              format: '{value:@Y-@m-@d}'
-            }
-          },
-
-          yAxis: {
-            title: {
-
-              text: 'Temperature (°C)'
-
-            }
-
-
-          },
-          /*series:[{
-            //data:[[2,5],[5,8],[9,1]]
-            name:'Datos sensores',
-            
-          }],*/
-
-       
-
-          /*data: {
-            //csv:'/archivos/sensor.csv'
-            csvURL: 'https://raw.githubusercontent.com/mekhatria/demo_highcharts/master/globalTemperatureChange.csv',
-            enablePolling: true
-          },*/
-
+         
           data: {
            
             csvURL:'http://localhost:5000/download/sensor.csv',
@@ -156,7 +96,7 @@
         });
 
       }
-      setInterval(grafica, 5000);
+      //setInterval(grafica, 5000);
     });
 
   </script>
