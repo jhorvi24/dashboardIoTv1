@@ -14,14 +14,14 @@ def timeAct():
 
 def saveData():
     time=timeAct()
-    with open('./archivos/sensor.csv', 'r', encoding='UTF8') as sensor:  #with open: context manager
+    with open('./archivos/sensor.csv', 'r', newline='') as sensor:  #with open: context manager; newline: Quitar espacio en blanco
         
         reader=csv.reader(sensor)
         for x, row in enumerate(reader):
             if x==0:
                 continue  #como es la cabecera no haga nada
 
-        with open('./archivos/sensor.csv', 'a',encoding='UTF8') as sensor:        
+        with open('./archivos/sensor.csv', 'a', newline='') as sensor:        
             writer = csv.writer(sensor)
         
             writer.writerow((time,valor,valor2))
