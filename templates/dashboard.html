@@ -19,8 +19,11 @@
   <!--HighChart Gráficos-->
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/boost.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>  
   <script src="https://code.highcharts.com/modules/data.js"></script> <!--Mostrar datos de csv-->
+
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
   <script type="text/javascript">
 
@@ -66,10 +69,16 @@
       //setInterval(grafica, 5000);
     });
 
-    document.addEventListener('DOMContentLoaded',() =>{
-     
+    //document.addEventListener('DOMContentLoaded',() =>{
+
+      function grafica(){
+
+        console.log("Graficando");
+
+
         Highcharts.chart('containerTem', {
           chart: {
+            
             type: 'spline'
           },
 
@@ -77,12 +86,19 @@
             text: 'Monitoreo de Temperatura y humedad'
           },
 
+          accessibility: {
+            announceNewData: {
+                enabled: true,
+                             
+            }
+        },
+
          
           data: {
            
             csvURL:'http://localhost:5000/download/sensor.csv',
             enablePolling: true,
-            dataRefreshRate: 5
+            dataRefreshRate: 3
             
 
           },
@@ -100,8 +116,19 @@
 
         });
 
+
+
+
+
+        
+      }
+      setInterval(grafica, 5000);
+     
+           
+        
+
       
-    });
+    //});
 
   </script>
 
