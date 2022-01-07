@@ -69,9 +69,9 @@
       //setInterval(grafica, 5000);
     });
 
-    //document.addEventListener('DOMContentLoaded',() =>{
+    document.addEventListener('DOMContentLoaded',() =>{
 
-      function grafica(){
+     // function grafica(){
 
         console.log("Graficando");
 
@@ -112,7 +112,8 @@
            
             csvURL:'http://localhost:5000/download/sensor.csv',
             enablePolling: true,
-            dataRefreshRate: 3
+            dataRefreshRate: 3,
+
             
 
           },
@@ -135,14 +136,14 @@
 
 
         
-      }
-      setInterval(grafica, 5000);
+      //}
+      //setInterval(grafica, 5000);
      
            
         
 
       
-    //});
+    });
 
   </script>
 
