@@ -173,7 +173,7 @@ def download(documento):
     #path=r'C:\Users\jhorv\OneDrive\Documentos\IoT\Servidor Flask\servidor\static\client\csv'
     path=r'C:\Users\jhorv\OneDrive\Documentos\IoT\Servidor Flask\Server2\archivos'
     #return send_file(path,filename=documento, as_attachment=False)
-    return send_from_directory(path,filename=documento, as_attachment=False)
+    return send_from_directory(path,filename=documento, as_attachment=False, cache_timeout=0) #cache_timeout: para evitar que cargue desde cache
     #return send_from_directory(path, attachment_filename ='sensor.csv', as_attachment=True)
 
 if __name__=='__main__':

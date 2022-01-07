@@ -75,6 +75,20 @@
 
         console.log("Graficando");
 
+        var urlCSV="http://localhost:5000/download/sensor.csv"; 
+        alertCsvCount(urlCSV);
+
+        function alertCsvCount(myFile) {
+       //use jquery get
+       $.get(myFile, function(data) {
+          var lineCount = data.split('\n').length;
+           //do what you want to do in lineCount
+            console.log(lineCount);
+        })
+      }
+
+       
+
 
         Highcharts.chart('containerTem', {
           chart: {
