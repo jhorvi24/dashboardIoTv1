@@ -27,6 +27,8 @@
 
   <script type="text/javascript">
 
+    var lineCount=0  //Global variable
+
     $(document).ready(function () {
 
 
@@ -81,16 +83,21 @@
         function alertCsvCount(myFile) {
        //use jquery get
        $.get(myFile, function(data) {
-          var lineCount = data.split('\n').length;
+            lineCount = data.split('\n').length;
            //do what you want to do in lineCount
             console.log(lineCount);
+
+            //return lineCount;
         })
       }
+
+      //setInterval(alertCsvCount, 5000);
 
        
 
 
         Highcharts.chart('containerTem', {
+        
           chart: {
             
             type: 'spline'
@@ -113,6 +120,8 @@
             csvURL:'http://localhost:5000/download/sensor.csv',
             enablePolling: true,
             dataRefreshRate: 3,
+            startRow:lineCount-10,
+            
 
             
 
